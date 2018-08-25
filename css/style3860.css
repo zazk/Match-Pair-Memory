@@ -1,0 +1,475 @@
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/league_gothic-webfontd41d.eot?') format('eot'),
+         url('../fonts/league_gothic-webfont.woff') format('woff'),
+         url('../fonts/league_gothic-webfont.ttf') format('truetype'),
+         url('../fonts/league_gothic-webfont.svg#webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #c60f0b;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	font: normal 14px Verdana;
+	background: #fff url(../img/bg.jpg) repeat;
+	color: #2c2c2c;
+	line-height: 20px;
+}
+ul {
+	list-style-type: none;
+}
+
+h1 a,
+.box h2,
+.start,
+.panel .links p,
+.modal .continue span,
+.modal.gameover .tweet a,
+.modal h2,
+.modal h3,
+.page h2,
+.page h3,
+.howto,
+nav button {
+	font-family: "LeagueGothicRegular", "Helvetica", Arial, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.container {
+	width: 960px;
+	margin: 10px auto 0 auto;
+	opacity: 1;
+	background: #eee url(../img/bg.gif) repeat;
+	border-radius: 20px;
+	box-shadow: 1px 1px 5px #666;
+}
+h1 {
+	width: 960px;
+	text-align: center;
+	font-size: 28px;
+	padding: 10px 0 10px 150px;
+	text-shadow: 1px 1px 1px #fff;
+}
+h1 a {
+	line-height: 50px;
+	height: 50px;
+	display: inline-block;
+	font-size: 50px;
+	text-decoration: none;
+	color: #333;
+}
+h1 a:hover {
+	text-decoration: none;
+}
+h1 a img {
+	float: left;
+	padding-right: 20px;
+}
+
+.board {
+	width: 580px;
+	height: 450px;
+	float: left;
+	background: #ccc url(../img/bg.jpg) 0 0 repeat;
+	border-radius: 10px;
+	box-shadow: 0 0 7px #333 inset;
+	padding-top: 15px;
+	position: relative;
+
+}
+.board p {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 0 10px 10px 0;
+	/*background: #ccc url(../img/people.jpg) 0 0 no-repeat;*/
+	cursor: pointer;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #333;
+	position: relative;
+}
+.board p span {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	z-index: 5;
+}
+
+.board .visible {
+}
+
+.board ul.cube p {
+	background: #ccc url(../img/carta-back.jpg) 0 0 no-repeat;
+}
+.board p span.back {
+	background: #ccc url(../img/carta-back.png) 0 0 no-repeat;
+}
+.board p span.front {
+	background: #ccc url(../img/people.jpg) 0 0 no-repeat;
+}
+.board p:nth-child(5n-4) {
+	margin-left: 20px;
+}
+.board p:hover {/*
+	box-shadow: 1px 1px 3px #ffe3e2;
+	-moz-transition: box-shadow 0.5s;*/
+}
+.board p.disabled {
+	cursor: auto;
+	opacity: 0.5;
+	box-shadow: 1px 1px 1px #333;
+}
+
+.board.hidden p {
+	visibility: hidden;
+}
+.board.intro {
+	background: url(../img/promo.png) center center no-repeat;
+}
+
+.start {
+	font-size: 28px;
+	display: block;
+	width: 100px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	background: #DDAD24;
+	border-radius: 10px;
+	padding: 10px 15px;
+	box-shadow: 0 0 3px #DDAD24 inset, 1px 1px 1px #666;
+	margin: 305px auto 0;
+	color: #f3f3f4;
+}
+
+.panel {
+	width: 320px;
+	float: left;
+	padding-left: 20px;
+}
+.panel .links {
+	padding: 40px 20px 30px;
+	text-align: center;
+	font-size: 30px;
+	line-height: 30px;
+}
+.panel .links p {
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+.panel .links p:hover {
+	color: #c60f0b;
+}
+.panel .links.sublinks {
+	padding: 5px 20px 0;
+}
+.panel .links.sublinks p {
+	font-size: 20px;
+	margin-bottom: 0px;
+}
+
+.box {
+	margin: 0 0 15px 10px;
+	text-align: center;
+	display: inline-block;
+	width: 130px;
+}
+.box h2 {
+	background: #DDAD24;
+	color: #f3f3f4;
+	box-shadow: 0 0 3px #DDAD24 inset;
+	border-radius: 10px 10px 0 0;
+	padding: 5px 20px;
+	font-size: 18px;
+}
+.box p {
+	background: #353535;
+	color: #FFF;
+	box-shadow: 0 0 5px 2px #000 inset;
+	border-radius: 0 0 10px 10px;
+	padding: 10px 20px;
+	font-size: 24px;
+}
+
+#formBg {
+	display: none;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+#formBg form {
+	display: block;
+	clear: both;
+	margin-left: 20px;
+}
+.modal form.disabled label:hover {
+	cursor: default;
+	border-bottom: none;
+}
+.modal label {
+	margin-left: 10px;
+}
+.modal label:hover {
+	cursor: pointer;
+	border-bottom: 1px solid #2c2c2c;
+}
+.modal {
+	margin: 60px auto;
+	width: 400px;
+	background: #d5d4d4;
+	border-radius: 15px;
+	padding: 15px;
+}
+.modal p {
+	margin: 10px 0;
+}
+.modal .header {
+	margin-top: 20px;
+}
+.modal .photo {
+	display: block;
+	float: left;
+	width: 100px;
+	height: 100px;
+	background: #ccc url(../img/people.jpg) 0 0 no-repeat;
+	border-radius: 10px;
+	margin: -20px 25px 25px 0;
+	border: 1px solid #2c2c2c;
+}
+.modal .continue {
+	text-align: right;
+}
+.modal .continue span {
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	background: #323232;
+	border-radius: 5px;
+	padding: 5px 15px;
+	font-size: 22px;
+}
+.modal .continue span.again {
+	margin-right: 15px;
+}
+.modal .continue span.again a {
+	color: #fff;
+}
+.modal .continue span.again a:hover {
+	text-decoration: none;
+}
+.modal.halfway h2,
+.modal.gameover h2,
+.modal.winticket h2,
+.modal.showscore h2 {
+	font-size: 28px;
+	margin-bottom: 15px;
+}
+.modal.halfway .modal-img {
+	background: #d5d4d4 url(../img/halfway.jpg) 0 0 no-repeat;
+	width: 408px;
+	height: 119px;
+	margin: 40px auto 0;
+}
+.modal.gameover {
+	width: 500px;
+}
+.modal.gameover .modal-img {
+	background: #d5d4d4 url(../img/gameover.jpg) 0 0 no-repeat;
+	width: 389px;
+	height: 177px;
+	margin: 0 auto 0;
+}
+.modal.gameover .tweet {
+	text-align: center;
+	padding: 10px 0 30px;
+}
+.modal.gameover .remember {
+	padding-bottom: 10px;
+}
+.modal.gameover .tweet a {
+	font-size: 28px;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	background: #DDAD24;
+	border-radius: 10px;
+	padding: 10px 15px;
+	box-shadow: 0 0 3px #DDAD24 inset, 1px 1px 1px #666;
+	margin: 0 auto 0;
+	color: #f3f3f4;
+}
+.modal.gameover .tweet.comment a {
+	font-size: 24px;
+}
+.modal.winticket ol {
+	padding-left: 30px;
+}
+.modal.winticket ol li {
+	padding-bottom: 10px;
+}
+.modal.showscore .continue {
+	padding: 0;
+	margin-bottom: 0;
+}
+.modal.showscore div {
+	margin-bottom: 10px;
+}
+
+.modalBig {
+	width: 800px;
+}
+
+#modalBg {
+	display: none;
+	background: #000;
+	opacity: 0.5;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.pages {
+	display: none;
+}
+
+.page {
+	text-align: center;
+	width: 600px;
+	position: relative;
+}
+.page h2 {
+	margin: 25px 0 10px;
+	font-size: 32px;
+}
+.page h2:first-child {
+	margin-top: 10px;
+}
+.page .continue {
+	visibility: visible;
+	text-align: right;
+	margin-top: 20px;
+}
+.page h3 {
+	font-size: 20px;
+	color: #c60f0b;
+	cursor: pointer;
+	margin-top: 40px;
+	display: inline-block;
+	border: 1px solid #f63f3b;
+	padding: 2px 15px;
+	border-radius: 5px;
+}
+.page h3:hover {
+	color: #fff;
+	background: #c60f0b;
+}
+.page .howto {
+	position: absolute;
+	font-size: 24px;
+	color: #444;
+}
+.page .collect {
+	top: 40px;
+	left: 135px;
+}
+.page .answer {
+	top: 230px;
+	left: 360px;
+}
+.page .score {
+	top: 315px;
+	left: 160px;
+}
+.page .time {
+	bottom: 30px;
+	left: 30px;
+}
+.page#page-howto {
+	height: 440px;
+	background: #FFF url(../img/howto.png) center 20px no-repeat;
+}
+.page#page-about {
+	height: 440px;
+	background: #FFF url(../img/about.png) center 20px no-repeat;
+}
+.page#page-about .continue {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+.page#page-howto .continue {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+.page#page-howto .continue span {
+}
+
+footer {
+	text-align: right;
+	line-height: 30px;
+	clear: both;
+	padding: 5px 50px 5px 0;
+	font-size: 10px;
+}
+footer p {
+	float: left;
+	margin-left: 45px;
+	display: inline-block;
+}
+footer .score {
+	cursor: pointer;
+}
+footer .score:hover {
+	color: #c60f0b;
+	border-bottom: 1px solid #333;
+}
+footer .social {
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+}
+
+
+#map-container {
+	overflow: hidden;
+	margin-bottom: 20px;
+	border: 1px solid #999;
+	border-radius: 10px;
+}
+#map {
+	float: left;
+	width: 399px;
+	height: 400px;
+}
+#map-directions {
+	float: left;
+	width: 369px;
+	height: 400px;
+	padding: 0 15px;
+	overflow: auto;
+}
+
+.ribbon { width: 100px; height: 73px; position: absolute; bottom: 23px; right: 15px; display: block; background: url(../img/enclavegames.png) no-repeat; text-indent: -5000px; }
