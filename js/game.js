@@ -14,12 +14,8 @@ GAME.Init = function() {
     GAME.Page('about');
   };
   //GAME.$id('threedee').onclick = function() { GAME.ThreeD(); };
-  GAME.$id('geo').onclick = function() {
-    GAME.API.geolocation();
-  };
-  GAME.$id('ticket').onclick = function() {
-    GAME.$showModal(GAME.$txt.winticket + GAME.$txt.close, 'winticket');
-  };
+  GAME.API.geolocation();
+
   var actualScore = GAME.API.localStorage('showScore');
   GAME.$id('score').onclick = function() {
     var str = GAME.$txt.showscore;
