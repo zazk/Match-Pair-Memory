@@ -13,6 +13,8 @@ GAME.Init = function() {
   GAME.$id('about').onclick = function() {
     GAME.Page('about');
   };
+  GAME.Page('init', false);
+
   //GAME.$id('threedee').onclick = function() { GAME.ThreeD(); };
   GAME.API.geolocation();
 
@@ -28,6 +30,10 @@ GAME.Init = function() {
   };
 };
 
+GAME.Submit = function() {
+  GAME.$hideModal();
+  return false;
+};
 GAME.Start = function(opt) {
   GAME.$id('board').className = 'board';
   if (opt == '3d') {
@@ -245,7 +251,7 @@ GAME.TimerStop = function() {
   clearTimeout(GAME.TimerClock);
 };
 
-GAME.Page = function(page) {
+GAME.Page = function(page, showClose = true) {
   if (page == 'gameover') {
     // HTML5 OFFLINE
     if (navigator.onLine) {
@@ -273,7 +279,9 @@ GAME.Page = function(page) {
     GAME.$showModal(str, 'gameover');
   } else {
     GAME.$showModal(
-      '' + GAME.$id('page-' + page).innerHTML + GAME.$txt.close,
+      '' +
+        GAME.$id('page-' + page).innerHTML +
+        (showClose ? GAME.$txt.close : ''),
       'page',
       'page-' + page
     );
