@@ -175,7 +175,7 @@ h1 a img {
   cursor: pointer;
 }
 .panel .links p:hover {
-  color: #c60f0b;
+  color: #ddad24;
 }
 .panel .links.sublinks {
   padding: 5px 20px 0;
@@ -225,6 +225,9 @@ h1 a img {
   cursor: default;
   border-bottom: none;
 }
+.modal #form p {
+  display: flex;
+}
 .modal label {
   margin-left: 10px;
 }
@@ -238,6 +241,10 @@ h1 a img {
   background: #d5d4d4;
   border-radius: 15px;
   padding: 15px;
+}
+.modal.halfway,
+.modal.gameover {
+  width: 600px;
 }
 .modal p {
   margin: 10px 0;
@@ -288,9 +295,6 @@ h1 a img {
   width: 408px;
   height: 119px;
   margin: 40px auto 0;
-}
-.modal.gameover {
-  width: 500px;
 }
 .modal.gameover .modal-img {
   background: #d5d4d4 url(../img/gameover.jpg) 0 0 no-repeat;
@@ -500,7 +504,7 @@ footer .social {
 }
 .signup input,
 .signup button {
-  border-radius: 5px;
+  border-radius: 15px;
   border: 1px solid lightgray;
   padding: 10px 15px;
   font-size: 16px;

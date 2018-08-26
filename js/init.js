@@ -68,10 +68,9 @@ GAME.$form = function(item, question, answers) {
 };
 
 GAME.$txt = {
-  halfway:
-    "<h2>Muy bien! estás a medio camino!</h2><div>Has resuelto los primeros 10 pares de fotos, veamos si puedes manejar las siguientes en la segunda parte del juego</div><p class='modal-img'></p>",
+  halfway: "<div><img src='./img/halfway.png' /></div>",
   gameover:
-    "<h2>Has finalizado el juego, Felicitaciones!</h2><div>Has ganado <strong>[0P]</strong> puntos de 200 posibles, esto es <strong>[0%]%</strong>!</div><div>Tu lo hiciste en solo <strong>[0M] minutos</strong> y <strong>[0S] segundos</strong>!</div><p class='modal-img'></p><div class='tweet'><a  href='[TWEET]'>Tweetea tu puntaje!</a></div><div class='remember'><strong>RECUERDA: </strong>Leave a <strong><a target='_blank' href='http://dev.end3r.com/2012/04/front-face-play-to-win-a-ticket-for-the-front-trends-2012-conference/#comments'>comment</a></strong> (with a link to the tweet with Your score) to have a chance of winning the ticket for the Front-Trends 2012 conference.</div><div class='continue'><span class='again'><a href='/'>Play again</a></span><span id='close'>Close</span></div>",
+    "<div><img src='./img/gameover.png' /> <div class='continue'><span class='again'><a href='./'>Jugar otra vez</a></span><span id='close'>Cerrar</span></div></div>",
   winticket:
     "<h2>Cómo ganar el premio</h2><ol><li>Juega y finaliza.</li><li>Tweetea tu puntaje.</li><li>Deja <a target='_blank' href=''>un comentario en el instagram</a> con el link a tu publicacion de tu score.</li><li>Cruza los dedos!</li><li>El ganador será elegido aleatoriamente.</li></ol>",
   showscore:

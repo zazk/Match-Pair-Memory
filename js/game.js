@@ -13,12 +13,14 @@ GAME.Init = function() {
   GAME.$id('about').onclick = function() {
     GAME.Page('about');
   };
-  GAME.Page('init', false);
 
   //GAME.$id('threedee').onclick = function() { GAME.ThreeD(); };
   GAME.API.geolocation();
 
   var actualScore = GAME.API.localStorage('showScore');
+  if (!actualScore.points) {
+    GAME.Page('init', false);
+  }
   GAME.$id('score').onclick = function() {
     var str = GAME.$txt.showscore;
     str = str.replace('[0P]', actualScore.points);
@@ -26,7 +28,7 @@ GAME.Init = function() {
     str = str.replace('[0M]', actualScore.minutes);
     str = str.replace('[0S]', actualScore.seconds);
     str = str.replace('[0C]', actualScore.trials);
-    GAME.$showModal(str + GAME.$txt.close, 'showscore');
+    // GAME.$showModal(str + GAME.$txt.close, 'showscore');
   };
 };
 
@@ -262,21 +264,7 @@ GAME.Page = function(page, showClose = true) {
 
     // HTML5 LOCAL STORAGE
     GAME.API.localStorage('saveScore');
-
-    var minHTML = ~~(GAME._time / 60),
-      sec = GAME._time % 60,
-      secHTML = sec < 10 ? '0' + sec : sec,
-      timeHTML = minHTML + ':' + secHTML;
-
-    var str = GAME.$txt.gameover;
-    str = str.replace('[0P]', GAME._points);
-    str = str.replace('[TWEET]', GAME.$txt.tweet);
-    str = str.replace('[0P]', GAME._points);
-    str = str.replace('[0%]', GAME._points / 2);
-    str = str.replace('[0T]', timeHTML);
-    str = str.replace('[0M]', minHTML);
-    str = str.replace('[0S]', secHTML);
-    GAME.$showModal(str, 'gameover');
+    GAME.$showModal(GAME.$txt.gameover, 'gameover');
   } else {
     GAME.$showModal(
       '' +
