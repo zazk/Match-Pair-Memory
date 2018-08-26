@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html manifest="offline.appcache">
 
-<!-- Mirrored from end3r.com/games/frontface/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Aug 2018 11:30:57 GMT -->
-
 <head>
 	<meta charset="utf-8" />
 	<title>Charry Studio - Juego de Cartas</title>
 	<meta name="author" content="end3r" />
 	<meta name="description" content="CharryStudio." />
-	<link rel="stylesheet" type="text/css" href="css/style3860.css?v=1" />
-	<link rel="stylesheet" type="text/css" href="css/3d.css" />
-	<link rel="shortcut icon" href="img/favicon.png" />
-	<script src="js/init.js"></script>
-	<script src="js/data.js"></script>
-	<script src="js/game.js"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<link rel="shortcut icon" href="favicon.png" />
 </head>
 
 <body>
@@ -60,20 +52,20 @@
 			<div id="page-init">
 				<div class="signup">
 					<div>
-						<img src=" img/logo.png " width="300 " alt=" ">
+						<img src="img/logo.png" width="300 " alt=" ">
 					</div>
 					<h4>¡Bienvenidos a nuestro juego!</h4>
 					<p>Para poder participar, deberás darle seguir a la página de <strong>Charry Studio</strong> en Instagram, <strong>como
 							requisito fundamental</strong></p>
 					<div>
-						<a href="https://www.instagram.com/charrystudioperu/ " target="_blank ">
-							<img src="img/button.png " width="300 " alt=" ">
+						<a href="https://www.instagram.com/charrystudioperu/" target="_blank ">
+							<img src="img/button.png" width="300 " alt=" ">
 						</a>
 					</div>
 					<p>
 						<strong>Luego ingresa tus datos como registro:</strong>
 					</p>
-					<form action=" " id="signup" onsubmit="return GAME.Submit(this);">
+					<form id="signup">
 						<div>
 							<input type="text" name="form_usuario" placeholder="Usuario de Instagram ">
 						</div>
@@ -84,7 +76,7 @@
 							<input type="text" name="form_dni" placeholder="DNI ">
 						</div>
 						<div>
-							<button type="submit ">Ingresar</button>
+							<button type="button" id="gosignup">Ingresar</button>
 						</div>
 					</form>
 				</div>
@@ -99,7 +91,6 @@
 	</div>
 	<div id="modalBg"></div>
 	<div id="formBg"></div>
-	<script>GAME.Init();</script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+export const GAME = {};
 GAME.Init = function() {
   // shuffle the input data so it looks kinda random
   for (var i = 10; i >= 0; i--) {

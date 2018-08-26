@@ -1,4 +1,4 @@
-GAME.data = [
+export const data = [
   // id | name | website | twitter | topic
   {
     id: 1,
@@ -19,7 +19,7 @@ GAME.data = [
   {
     id: 3,
     question: '¿Cuál es nuestra colección más vendida?	',
-    answer: 3,
+    answer: 1,
     options: ['Sparkle Pearl', 'Goddess Pink	', 'Deluxe Edition']
   },
   {

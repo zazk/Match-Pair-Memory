@@ -1,5 +1,8 @@
 'use strict';
-var GAME = {};
+import './css/style3860.css';
+import { GAME } from './game';
+import { data } from './data';
+GAME.data = data;
 GAME.$id = function(id) {
   return document.getElementById(id);
 };
@@ -23,6 +26,13 @@ GAME.$showModal = function(content, className, idName) {
   if (content) {
     GAME.$id('formBg').innerHTML =
       '<div class="modal' + classHTML + '"' + idHTML + '>' + content + '</div>';
+    console.log("I'm here", document.querySelector('#gosignup'));
+    document
+      .querySelector('#gosignup')
+      .addEventListener('click', function(evt) {
+        console.log('SUBMITE');
+        evt.preventDefault();
+      });
   }
   if (GAME.$id('close')) {
     GAME.$id('close').onclick = function() {
@@ -248,3 +258,5 @@ GAME.ThreeD = function() {
 
   GAME.Start('3d');
 };
+
+GAME.Init();

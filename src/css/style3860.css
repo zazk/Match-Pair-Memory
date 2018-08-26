@@ -115,7 +115,7 @@ h1 a img {
 }
 
 .board ul.cube p {
-  background: #ccc url(../img/carta-back.jpg) 0 0 no-repeat;
+  background: #ccc url(../img/carta-back.png) 0 0 no-repeat;
 }
 .board p span.back {
   background: #ccc url(../img/carta-back.png) 0 0 no-repeat;
@@ -482,7 +482,6 @@ footer .social {
   bottom: 23px;
   right: 15px;
   display: block;
-  background: url(../img/enclavegames.png) no-repeat;
   text-indent: -5000px;
 }
 .signup {
