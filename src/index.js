@@ -1,7 +1,45 @@
 'use strict';
+import './css/3d.css';
 import './css/style3860.css';
 import { GAME } from './game';
 import { data } from './data';
+import firebase from 'firebase/app';
+import 'firebase/app';
+import 'firebase/database';
+
+// Initialize Firebase
+const config = {
+  apiKey: 'AIzaSyCbfpZnSEquPYRtGq9x35LoFtYNc-Xqpwc',
+  authDomain: 'charry-studio.firebaseapp.com',
+  databaseURL: 'https://charry-studio.firebaseio.com',
+  projectId: 'charry-studio',
+  storageBucket: 'charry-studio.appspot.com',
+  messagingSenderId: '315206956182'
+};
+firebase.initializeApp(config);
+// Get a reference to the database service
+const db = firebase.database();
+
+GAME.writeUserData = function(instagram, name, dni, points = 0, time = 0) {
+  const user = {
+    instagram: instagram,
+    name: name,
+    dni: dni,
+    points: points,
+    time: time
+  };
+  GAME.user = user;
+  db.ref('users/' + dni).set(user, error => {
+    if (error) {
+      // The write failed...
+      console.warn('error', error);
+    } else {
+      // Data saved successfully!
+      console.info('Saved Successfully');
+    }
+  });
+};
+
 GAME.data = data;
 GAME.$id = function(id) {
   return document.getElementById(id);
@@ -34,7 +72,15 @@ GAME.$showModal = function(content, className, idName) {
   }
   if (GAME.$id('gosignup')) {
     GAME.$id('gosignup').onclick = function() {
-      GAME.$hideModal();
+      const name = GAME.$id('form_name').value;
+      const instagram = GAME.$id('form_instagram').value;
+      const dni = GAME.$id('form_dni').value;
+      if (name.length && instagram.length && dni.length) {
+        GAME.writeUserData(instagram, name, dni);
+        GAME.$hideModal();
+      } else {
+        alert('Todos los campos son requeridos');
+      }
     };
   }
 };
@@ -106,13 +152,13 @@ GAME.$txt = {
               </p>
               <form id="signup">
                 <div>
-                  <input type="text" name="form_usuario" placeholder="Usuario de Instagram ">
+                  <input type="text" id="form_instagram" placeholder="Usuario de Instagram ">
                 </div>
                 <div>
-                  <input type="text" name="form_nombre" placeholder="Nombre Completo ">
+                  <input type="text" id="form_name" placeholder="Nombre Completo ">
                 </div>
                 <div>
-                  <input type="text" name="form_dni" placeholder="DNI ">
+                  <input type="text" id="form_dni" placeholder="DNI ">
                 </div>
                 <div>
                   <button type="button" id="gosignup">Ingresar</button>

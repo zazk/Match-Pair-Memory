@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "charry-studio"
+    "staging": "charry-studio",
+    "default": "charry-studio"
   }
 }

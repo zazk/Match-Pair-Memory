@@ -5,6 +5,7 @@ GAME.Init = function() {
     GAME.shuffleArray(GAME.data);
   }
   GAME._counter = 10;
+  GAME.$id('container').style = '';
   GAME.$id('start').onclick = function() {
     if (!GAME._active) GAME.Start();
   };
@@ -230,11 +231,25 @@ GAME.CheckAnswer = function(chosen, correct) {
           GAME.$hideModal();
           GAME.NewLevel(2);
         };
+        GAME.writeUserData(
+          GAME.user.instagram,
+          GAME.user.name,
+          GAME.user.dni,
+          GAME._points,
+          GAME._time
+        );
       }, 200);
     } else if (GAME._questions == 20) {
       setTimeout(function() {
         GAME.TimerStop();
         GAME.Page('gameover');
+        GAME.writeUserData(
+          GAME.user.instagram,
+          GAME.user.name,
+          GAME.user.dni,
+          GAME._points,
+          GAME._time
+        );
       }, 200);
     }
   };
