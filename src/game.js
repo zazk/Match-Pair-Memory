@@ -20,7 +20,7 @@ GAME.Init = function() {
 
   var actualScore = GAME.API.localStorage('showScore');
   if (!actualScore.points) {
-    GAME.Page('init', false);
+    GAME.$showModal(GAME.$txt.signup, 'page');
   }
   GAME.$id('score').onclick = function() {
     var str = GAME.$txt.showscore;
@@ -247,7 +247,7 @@ GAME.Timer = function() {
     minHTML = min < 10 ? '0' + min : min;
   GAME.$id('time').innerHTML = minHTML + ':' + secHTML;
   GAME._time++;
-  GAME.TimerClock = setTimeout('GAME.Timer()', 1000);
+  GAME.TimerClock = setTimeout(GAME.Timer, 1000);
 };
 
 GAME.TimerStop = function() {

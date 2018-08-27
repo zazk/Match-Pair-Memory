@@ -26,16 +26,14 @@ GAME.$showModal = function(content, className, idName) {
   if (content) {
     GAME.$id('formBg').innerHTML =
       '<div class="modal' + classHTML + '"' + idHTML + '>' + content + '</div>';
-    console.log("I'm here", document.querySelector('#gosignup'));
-    document
-      .querySelector('#gosignup')
-      .addEventListener('click', function(evt) {
-        console.log('SUBMITE');
-        evt.preventDefault();
-      });
   }
   if (GAME.$id('close')) {
     GAME.$id('close').onclick = function() {
+      GAME.$hideModal();
+    };
+  }
+  if (GAME.$id('gosignup')) {
+    GAME.$id('gosignup').onclick = function() {
       GAME.$hideModal();
     };
   }
@@ -90,7 +88,37 @@ GAME.$txt = {
   wrong: 'Respuesta equivocada, quizá la próxima vez...',
   tweet:
     'https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fend3r.com%2Fgames%2Ffrontface%2F&text=He ganado [0P] puntos en [0T], puedes vencer eso?',
-  close: "<div class='continue'><span id='close'>Cerrar</span></div>"
+  close: "<div class='continue'><span id='close'>Cerrar</span></div>",
+  signup: `<div class="signup" id="page-init">
+              <div>
+                <img src="img/logo.png" width="300 " alt=" ">
+              </div>
+              <h4>¡Bienvenidos a nuestro juego!</h4>
+              <p>Para poder participar, deberás darle seguir a la página de <strong>Charry Studio</strong> en Instagram, <strong>como
+                  requisito fundamental</strong></p>
+              <div>
+                <a href="https://www.instagram.com/charrystudioperu/" target="_blank ">
+                  <img src="img/button.png" width="300 " alt=" ">
+                </a>
+              </div>
+              <p>
+                <strong>Luego ingresa tus datos como registro:</strong>
+              </p>
+              <form id="signup">
+                <div>
+                  <input type="text" name="form_usuario" placeholder="Usuario de Instagram ">
+                </div>
+                <div>
+                  <input type="text" name="form_nombre" placeholder="Nombre Completo ">
+                </div>
+                <div>
+                  <input type="text" name="form_dni" placeholder="DNI ">
+                </div>
+                <div>
+                  <button type="button" id="gosignup">Ingresar</button>
+                </div>
+              </form>
+            </div>`
 };
 
 GAME.API = {};
